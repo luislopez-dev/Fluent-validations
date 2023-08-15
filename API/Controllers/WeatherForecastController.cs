@@ -29,4 +29,10 @@ public class WeatherForecastController : ControllerBase
             })
             .ToArray();
     }
+    
+    [HttpPost]
+    public ActionResult Post([FromBody] WeatherForecast forecast)
+    {
+        return Ok("Success!");
+    }
 }
