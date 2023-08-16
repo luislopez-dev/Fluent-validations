@@ -20,9 +20,12 @@ public class OrderValidator : AbstractValidator<Order>
         /*
          * This email validator validates the customer email address
          * against built in regular expressions which cover most of the
-         * email address formats
+         * email address formats. The next validator (the chaining validator)
+         * ensures the email address is at least 20 characters
          */
-        RuleFor(model => model.CustomerEmail).EmailAddress();
+        RuleFor(model => model.CustomerEmail)
+            .EmailAddress()
+            .MinimumLength(20);
         
         // Rules for OrderStatus field
         /*
