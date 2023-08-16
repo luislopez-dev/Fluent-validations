@@ -8,6 +8,7 @@ public static class FluentValidationExtensions
     {
         return ruleBuilder
             .MinimumLength(10)
-            .Must(val => val.Split(" ").Length >= 2);
+            .Must(val => val.Split(" ").Length >= 2)
+            .WithMessage("Name must contain a single space character and be at least 10 characters long");
     }
 }
