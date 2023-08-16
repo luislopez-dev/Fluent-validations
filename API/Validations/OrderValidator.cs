@@ -16,7 +16,13 @@ public class OrderValidator : AbstractValidator<Order>
         // Rules for Price field
         RuleFor(model => model.Price).InclusiveBetween(500, 1500);
         
-        
+        // Rules for Customer Email
+        /*
+         * This email validator validates the customer email address
+         * against built in regular expressions which cover most of the
+         * email address formats
+         */
+        RuleFor(model => model.CustomerEmail).EmailAddress();
 
     } 
 }
