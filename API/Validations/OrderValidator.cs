@@ -25,7 +25,7 @@ public class OrderValidator : AbstractValidator<Order>
          */
         RuleFor(model => model.CustomerEmail)
             .Cascade(CascadeMode.StopOnFirstFailure) /* This validator will stop the "MinimumLength"
-                 in case the "MinimumLength" validator fails */
+                 from executing in case the "EmailAddress" validator fails */
             .EmailAddress()
             .MinimumLength(20);
         
