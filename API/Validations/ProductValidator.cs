@@ -1,6 +1,12 @@
-﻿namespace API.Validations;
+﻿using API.Models;
+using FluentValidation;
 
-public class ProductValidator
+namespace API.Validations;
+
+public class ProductValidator: AbstractValidator<Product>
 {
-    
+    public ProductValidator()
+    {
+        RuleFor(model => model.Name).NotEmpty();
+    }
 }
