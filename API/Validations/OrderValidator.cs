@@ -24,6 +24,8 @@ public class OrderValidator : AbstractValidator<Order>
          * ensures the email address is at least 20 characters
          */
         RuleFor(model => model.CustomerEmail)
+            .Cascade(CascadeMode.StopOnFirstFailure) /* This validator will stop the "MinimumLength"
+                 in case the "MinimumLength" validator fails */
             .EmailAddress()
             .MinimumLength(20);
         
