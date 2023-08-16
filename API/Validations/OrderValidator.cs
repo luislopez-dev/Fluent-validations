@@ -39,7 +39,5 @@ public class OrderValidator : AbstractValidator<Order>
         // Adding validator for each product inside Order (Nested validator)
         RuleForEach(model => model.Products)
             .SetValidator(new ProductValidator()!);
-        
-        
     }
 }

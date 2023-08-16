@@ -1,5 +1,6 @@
 ﻿using API.Data;
 using API.Models;
+using API.Validations;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers;
@@ -27,5 +28,20 @@ public class OrdersController: ControllerBase
     {
         var orders = await _dataStore.GetOrders();
         return Ok(orders);
+    }
+
+    // Modifying default fluent validations behavior
+    [HttpPost]
+    public ActionResult Post([FromBody] Order order)
+    {
+        var product = new Product()
+        {
+            Name = null
+        };
+        var validationResult = new ProductValidator().Validate(product);
+
+        return validationResult.IsValid
+            ? (ActionResult)Ok("Success!")
+            : BadRequest("Validation Failed");
     }
 }
