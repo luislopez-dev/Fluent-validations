@@ -36,8 +36,8 @@ public class OrderValidator : AbstractValidator<Order>
          */ 
         RuleFor(model => model.OrderStatus).IsInEnum();
 
-        // Adding validator for product inside Order validator (Nested validator)
-        RuleFor(model => model.Product)
+        // Adding validator for each product inside Order (Nested validator)
+        RuleForEach(model => model.Products)
             .NotNull()
             .SetValidator(new ProductValidator()!);
         
