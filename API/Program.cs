@@ -1,20 +1,23 @@
 using API.Data;
-using FluentValidation.AspNetCore;
+using API.Validations;
+using FluentValidation;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+// Adding fluent validations to container
+
 builder.Services.AddControllers();
 
-builder.Services
-    .AddFluentValidationAutoValidation()
-    .AddFluentValidationClientsideAdapters();   
+builder.Services.AddValidatorsFromAssemblyContaining<OrderValidator>();
+
 builder.Services.AddSingleton<FakeDataStore>();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-// builder.Services.AddSwaggerGen();
 
+// builder.Services.AddSwaggerGen();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
