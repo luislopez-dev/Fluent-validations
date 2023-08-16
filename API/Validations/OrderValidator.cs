@@ -35,5 +35,11 @@ public class OrderValidator : AbstractValidator<Order>
          * is one of the included members of the enum
          */ 
         RuleFor(model => model.OrderStatus).IsInEnum();
-    } 
+
+        // Adding validator for product inside Order validator (Nested validator)
+        RuleFor(model => model.Product)
+            .NotNull()
+            .SetValidator(new ProductValidator()!);
+        
+    }
 }
