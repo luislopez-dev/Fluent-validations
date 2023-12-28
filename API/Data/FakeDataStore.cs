@@ -1,4 +1,9 @@
-﻿
+﻿ /*
+ * Author: Luis López
+ * Website: https://github.com/luislopez-dev
+ * Description: Training Project
+ */
+ 
 using API.Models;
 using Microsoft.AspNetCore.Mvc;
 

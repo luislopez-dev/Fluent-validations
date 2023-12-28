@@ -1,3 +1,9 @@
+ /*
+ * Author: Luis López
+ * Website: https://github.com/luislopez-dev
+ * Description: Training Project
+ */
+ 
 using API.Data;
 using API.Validations;
 using FluentValidation;

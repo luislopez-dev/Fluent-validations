@@ -1,4 +1,10 @@
-﻿using API.Enums;
+﻿ /*
+ * Author: Luis López
+ * Website: https://github.com/luislopez-dev
+ * Description: Training Project
+ */
+ 
+using API.Enums;
 
 namespace API.Models;
 

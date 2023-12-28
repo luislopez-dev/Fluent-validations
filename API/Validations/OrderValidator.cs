@@ -1,4 +1,10 @@
-﻿using API.Extensions;
+﻿ /*
+ * Author: Luis López
+ * Website: https://github.com/luislopez-dev
+ * Description: Training Project
+ */
+ 
+using API.Extensions;
 using API.Models;
 using FluentValidation;
 

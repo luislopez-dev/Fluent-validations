@@ -1,4 +1,10 @@
-﻿using API.Data;
+﻿ /*
+ * Author: Luis López
+ * Website: https://github.com/luislopez-dev
+ * Description: Training Project
+ */
+ 
+using API.Data;
 using API.Models;
 using API.Validations;
 using FluentValidation;

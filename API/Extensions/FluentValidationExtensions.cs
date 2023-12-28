@@ -1,4 +1,10 @@
-﻿using FluentValidation;
+﻿ /*
+ * Author: Luis López
+ * Website: https://github.com/luislopez-dev
+ * Description: Training Project
+ */
+ 
+using FluentValidation;
 
 namespace API.Extensions;
 
